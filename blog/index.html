@@ -1,0 +1,32 @@
+---
+layout: page
+title: Blog
+date: 2011-11-05 05:41:37.000000000 +05:30
+type: page
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories: []
+tags: []
+meta:
+  _edit_last: '1'
+author:
+  login: anil
+  email: anil.verve@gmail.com
+  display_name: anil
+  first_name: Anil
+  last_name: Gulecha
+---
+
+{% for post in site.posts %}
+  <article>
+    <h2>
+      <a href="{{ post.url }}">
+        {{ post.title }}
+      </a>
+    </h2>
+    <time datetime="{{ post.date | date: "%Y-%m-%d" }}">{{ post.date | date_to_long_string }}</time>
+    {{ post.content }}
+  </article>
+{% endfor %}
